@@ -1,0 +1,23 @@
+{
+    "name": "vjandrea/html",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrea Bergamasco",
+            "email": "abergamasco@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "illuminate/html": "4.2.*",
+        "illuminate/http": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Vjandrea\\Html": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
