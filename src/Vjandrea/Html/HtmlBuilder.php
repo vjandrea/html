@@ -21,7 +21,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
     * @param string $charset default 'utf-8'
     * @return string
     */
-    public function charset($charset = 'utf-8') {
+    public function metacharset($charset = 'utf-8') {
         return '<meta charset="'.$charset.'">';
     }
     
