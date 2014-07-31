@@ -36,4 +36,16 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   public function html_lang($lang = 'en') {
     return '<html lang="' . $lang . '">';
   }
+  
+  
+  /**
+  * Returns a title tag
+  * 
+  * @param string $title default ''
+  * @return string
+  */
+  public function title($title = '') {
+    return '<title>' . e($title) . '</title>';
+  }
+  
 }
