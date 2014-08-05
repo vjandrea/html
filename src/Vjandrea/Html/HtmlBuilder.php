@@ -123,7 +123,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   * @return void
   **/
   public function heading($type = 'h1', $title = '', $properties = []) {
-    if(!in_array($type, ['h1','h2','h3','h4','h5','h6']) {
+    if(!in_array($type, ['h1','h2','h3','h4','h5','h6'])) {
       return '';
     } 
     return '<'.$type.'>'.e($title).'<'.$type.'>'; 
