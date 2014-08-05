@@ -48,17 +48,85 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
     return '<title>' . e($title) . '</title>';
   }
   
-  // refactor con metodo heading('h1', $title, $properties)
+  /**
+  * Returns a h1 heading
+  *
+  * @param string $title default ''
+  * @param array $properties default []
+  * @return void
+  **/
   public function h1($title = '', $properties = []) {
-    return '<h1>' . e($title) . '</h1>';
+    return $this->heading('h1', $title, $properties);
   }
 
+  /**
+  * Returns a h2 heading
+  *
+  * @param string $title default ''
+  * @param array $properties default []
+  * @return void
+  **/
   public function h2($title = '', $properties = []) {
-    return '<h2>' . e($title) . '</h2>'; 
+    return $this->heading('h2', $title, $properties);
   }
   
+  /**
+  * Returns a h3 heading
+  *
+  * @param string $title default ''
+  * @param array $properties default []
+  * @return void
+  **/
   public function h3($title = '', $properties = []) {
-    return '<h3>' . e($title) . '</h3>'; 
+    return $this->heading('h3', $title, $properties);
+  }
+  
+  /**
+  * Returns a h4 heading
+  *
+  * @param string $title default ''
+  * @param array $properties default []
+  * @return void
+  **/
+  public function h4($title = '', $properties = []) {
+    return $this->heading('h4', $title, $properties);
+  }
+
+  /**
+  * Returns a h5 heading
+  *
+  * @param string $title default ''
+  * @param array $properties default []
+  * @return void
+  **/
+  public function h5($title = '', $properties = []) {
+    return $this->heading('h5', $title, $properties);
+  }
+
+  /**
+  * Returns a h6 heading
+  *
+  * @param string $title default ''
+  * @param array $properties default []
+  * @return void
+  **/
+  public function h6($title = '', $properties = []) {
+    return $this->heading('h6', $title, $properties);
+  }
+  
+  /**
+  * Returns a heading
+  *
+  * @param string $type default 'h1'
+  * @param string $title default ''
+  * @param array $properties default []
+  * @return void
+  **/
+  public function heading($type = 'h1', $title = '', $properties = []) {
+    if(!in_array($type, ['h1','h2','h3','h4','h5','h6']) {
+      return '';
+    } 
+    return '<'.$type.'>'.e($title).'<'.$type.'>'; 
   }
 
 }
