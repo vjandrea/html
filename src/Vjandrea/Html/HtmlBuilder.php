@@ -48,4 +48,17 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
     return '<title>' . e($title) . '</title>';
   }
   
+  // refactor con metodo heading('h1', $title, $properties)
+  public function h1($title = '', $properties = []) {
+    return '<h1>' . e($title) . '</h1>';
+  }
+
+  public function h2($title = '', $properties = []) {
+    return '<h2>' . e($title) . '</h2>'; 
+  }
+  
+  public function h3($title = '', $properties = []) {
+    return '<h3>' . e($title) . '</h3>'; 
+  }
+
 }
