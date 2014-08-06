@@ -8,7 +8,7 @@ Methods
 
 * favicon($href, $type)
 * meta_charset($charset)
-* html_lang($lang)
+* html($lang)
 * title($title)
 * h1($title, $properties)
 * h2($title, $properties)

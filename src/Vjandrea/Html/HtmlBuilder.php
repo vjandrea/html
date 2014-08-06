@@ -33,8 +33,11 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   * @param string $lang default 'en'
   * @return string
   */
-  public function html_lang($lang = 'en') {
-    return '<html lang="' . $lang . '">';
+  public function html($lang = 'en') {
+    $output = '<html';
+    $output .= ($lang != '') ? 'lang="' . $lang . '"';
+    $output .= '>';
+    return $output;
   }
   
   
