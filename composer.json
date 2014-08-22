@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Vjandrea\\Html": "src/"
+            "Vjandrea\\Html\\": "src/"
         }
     },
     "minimum-stability": "stable"

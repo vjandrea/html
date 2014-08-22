@@ -35,7 +35,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   */
   public function html($lang = 'en') {
     $output = '<html';
-    $output .= ($lang != '') ? 'lang="' . $lang . '"';
+    $output .= ($lang != '') ? 'lang="' . $lang . '"' : '';
     $output .= '>';
     return $output;
   }
