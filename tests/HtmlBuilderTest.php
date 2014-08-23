@@ -51,11 +51,75 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
   }
 
 
-  public function testh1() {
+  public function testH1() {
     $html = new HtmlBuilder;
 
     $this->assertEquals('<h1></h1>', $html->h1());
 
     $this->assertEquals('<h1>test</h1>', $html->h1('test'));
+
   }
+
+
+  public function testH2() {
+    $html = new HtmlBuilder;
+
+    $this->assertEquals('<h2></h2>', $html->h2());
+
+    $this->assertEquals('<h2>test</h2>', $html->h2('test'));
+
+  }
+
+
+  public function testH3() {
+    $html = new HtmlBuilder;
+
+    $this->assertEquals('<h1></h1>', $html->h1());
+
+    $this->assertEquals('<h1>test</h1>', $html->h1('test'));
+
+  }
+
+
+  public function testH4() {
+    $html = new HtmlBuilder;
+
+    $this->assertEquals('<h4></h4>', $html->h4());
+
+    $this->assertEquals('<h4>test</h4>', $html->h4('test'));
+
+  }
+
+
+  public function testH5() {
+    $html = new HtmlBuilder;
+
+    $this->assertEquals('<h5></h5>', $html->h5());
+
+    $this->assertEquals('<h5>test</h5>', $html->h5('test'));
+
+  }
+
+
+  public function testH6() {
+    $html = new HtmlBuilder;
+
+    $this->assertEquals('<h6></h6>', $html->h6());
+
+    $this->assertEquals('<h6>test</h6>', $html->h6('test'));
+
+  }
+
+
+  public function testHeading() {
+    $html = new HtmlBuilder;
+
+    $this->assertEquals('', $html->heading('h8'));
+
+    $this->assertEquals('<h1 class="title">test</h1>', $html->heading('h1', 'test', ['class' => 'title']));
+
+  }
+
+
+
 }

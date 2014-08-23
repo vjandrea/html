@@ -55,66 +55,66 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   * Returns a h1 heading
   *
   * @param string $title default ''
-  * @param array $properties default []
+  * @param array $attributes default []
   * @return void
   **/
-  public function h1($title = '', $properties = []) {
-    return $this->heading('h1', $title, $properties);
+  public function h1($title = '', $attributes = []) {
+    return $this->heading('h1', $title, $attributes);
   }
 
   /**
   * Returns a h2 heading
   *
   * @param string $title default ''
-  * @param array $properties default []
+  * @param array $attributes default []
   * @return void
   **/
-  public function h2($title = '', $properties = []) {
-    return $this->heading('h2', $title, $properties);
+  public function h2($title = '', $attributes = []) {
+    return $this->heading('h2', $title, $attributes);
   }
   
   /**
   * Returns a h3 heading
   *
   * @param string $title default ''
-  * @param array $properties default []
+  * @param array $attributes default []
   * @return void
   **/
-  public function h3($title = '', $properties = []) {
-    return $this->heading('h3', $title, $properties);
+  public function h3($title = '', $attributes = []) {
+    return $this->heading('h3', $title, $attributes);
   }
   
   /**
   * Returns a h4 heading
   *
   * @param string $title default ''
-  * @param array $properties default []
+  * @param array $attributes default []
   * @return void
   **/
-  public function h4($title = '', $properties = []) {
-    return $this->heading('h4', $title, $properties);
+  public function h4($title = '', $attributes = []) {
+    return $this->heading('h4', $title, $attributes);
   }
 
   /**
   * Returns a h5 heading
   *
   * @param string $title default ''
-  * @param array $properties default []
+  * @param array $attributes default []
   * @return void
   **/
-  public function h5($title = '', $properties = []) {
-    return $this->heading('h5', $title, $properties);
+  public function h5($title = '', $attributes = []) {
+    return $this->heading('h5', $title, $attributes);
   }
 
   /**
   * Returns a h6 heading
   *
   * @param string $title default ''
-  * @param array $properties default []
+  * @param array $attributes default []
   * @return void
   **/
-  public function h6($title = '', $properties = []) {
-    return $this->heading('h6', $title, $properties);
+  public function h6($title = '', $attributes = []) {
+    return $this->heading('h6', $title, $attributes);
   }
   
   /**
@@ -122,14 +122,15 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   *
   * @param string $type default 'h1'
   * @param string $title default ''
-  * @param array $properties default []
+  * @param array $attributes default []
   * @return void
   **/
-  public function heading($type = 'h1', $title = '', $properties = []) {
+  public function heading($type = 'h1', $title = '', $attributes = []) {
     if(!in_array($type, ['h1','h2','h3','h4','h5','h6'])) {
       return '';
     } 
-    return '<'.$type.'>'.e($title).'</'.$type.'>'; 
+    return '<'.$type.$this->attributes($attributes).'>'.e($title).'</'.$type.'>'; 
   }
+
 
 }
