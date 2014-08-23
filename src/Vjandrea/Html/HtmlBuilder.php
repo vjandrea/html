@@ -8,10 +8,10 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
     * Returns a favicon link to the specified image href
     * 
     * @param string $href default ''
-    * @param string $type default 'image/png'  
+    * @param string $type default 'image/x-icon'  
     * @return string
     */
-    public function favicon($href = '', $type = 'image/png') {
+    public function favicon($href = '', $type = 'image/x-icon') {
         return $href ? '<link rel="icon" type="' . $type . '" href="'. $href . '">' : '';
     }
     
@@ -30,12 +30,12 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   /**
   * Returns an html with lang parameter
   *
-  * @param string $lang default 'en'
+  * @param string $lang default ''
   * @return string
   */
-  public function html($lang = 'en') {
+  public function html($lang = '') {
     $output = '<html';
-    $output .= ($lang != '') ? 'lang="' . $lang . '"' : '';
+    $output .= ($lang != '') ? ' lang="' . $lang . '"' : '';
     $output .= '>';
     return $output;
   }
@@ -129,7 +129,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
     if(!in_array($type, ['h1','h2','h3','h4','h5','h6'])) {
       return '';
     } 
-    return '<'.$type.'>'.e($title).'<'.$type.'>'; 
+    return '<'.$type.'>'.e($title).'</'.$type.'>'; 
   }
 
 }
