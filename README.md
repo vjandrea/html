@@ -1,7 +1,8 @@
-Html extension
+HtmlBuilder extension
 ==============
+[![Build Status](https://travis-ci.org/vjandrea/html.svg?branch=master)](https://travis-ci.org/vjandrea/html)
 
-This packages adds some missing methods to Illuminate/Html
+This packages adds some missing methods to Illuminate/Html for Laravel 4
 
 Methods
 -------
@@ -18,7 +19,17 @@ Methods
 * h6()
 * heading()
 
------------
+Installation
+------------
+Add to `composer.json`:
+
+	"vjandrea/html": "dev-master"
+
+and add to the `'providers'` array in `app/config/app.php`
+
+	'Vjandrea\Html\HtmlServiceProvider'	
+
+Run `composer install` and you're ready to use the package.
 
 Usage
 -----
@@ -38,12 +49,13 @@ Returns a favicon link to the specified image href
 
 	string
 
+
+
 ### meta_charset()
 
 Returns a meta charset tag
 
 	meta_charset(string $charset) : string
-
 
 **Parameters**
 
@@ -52,6 +64,8 @@ Returns a meta charset tag
 **Returns**
 
 	string
+
+
 
 ### html()
 
@@ -67,6 +81,8 @@ Returns an html tag with lang parameter
 
 	string
 
+
+
 ### title()
 
 Returns a title tag
@@ -80,6 +96,8 @@ Returns a title tag
 **Returns**
 
 	string
+
+
 
 ### h1()
 
@@ -95,7 +113,9 @@ Returns a h1 heading
 **Returns**
 
 	string
-	
+
+
+
 ### h2()
 
 Returns a h2 heading
@@ -111,6 +131,8 @@ Returns a h2 heading
 
 	string
 
+
+
 ### h3()
 
 Returns a h3 heading
@@ -125,6 +147,8 @@ Returns a h3 heading
 **Returns**
 
 	string
+
+
 	
 ### h4()
 
@@ -140,6 +164,7 @@ Returns a h4 heading
 **Returns**
 
 	string
+
 
 
 ### h5()
@@ -158,6 +183,7 @@ Returns a h5 heading
 	string
 
 
+
 ### h6()
 
 Returns a h6 heading
@@ -172,6 +198,7 @@ Returns a h6 heading
 **Returns**
 
 	string
+
 
 
 ### heading()
