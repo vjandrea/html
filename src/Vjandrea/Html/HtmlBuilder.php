@@ -56,7 +56,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   *
   * @param string $title default ''
   * @param array $attributes default []
-  * @return void
+  * @return string
   **/
   public function h1($title = '', $attributes = []) {
     return $this->heading('h1', $title, $attributes);
@@ -67,7 +67,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   *
   * @param string $title default ''
   * @param array $attributes default []
-  * @return void
+  * @return string
   **/
   public function h2($title = '', $attributes = []) {
     return $this->heading('h2', $title, $attributes);
@@ -78,7 +78,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   *
   * @param string $title default ''
   * @param array $attributes default []
-  * @return void
+  * @return string
   **/
   public function h3($title = '', $attributes = []) {
     return $this->heading('h3', $title, $attributes);
@@ -89,7 +89,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   *
   * @param string $title default ''
   * @param array $attributes default []
-  * @return void
+  * @return string
   **/
   public function h4($title = '', $attributes = []) {
     return $this->heading('h4', $title, $attributes);
@@ -100,7 +100,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   *
   * @param string $title default ''
   * @param array $attributes default []
-  * @return void
+  * @return string
   **/
   public function h5($title = '', $attributes = []) {
     return $this->heading('h5', $title, $attributes);
@@ -111,7 +111,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   *
   * @param string $title default ''
   * @param array $attributes default []
-  * @return void
+  * @return string
   **/
   public function h6($title = '', $attributes = []) {
     return $this->heading('h6', $title, $attributes);
@@ -123,7 +123,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   * @param string $type default 'h1'
   * @param string $title default ''
   * @param array $attributes default []
-  * @return void
+  * @return string
   **/
   public function heading($type = 'h1', $title = '', $attributes = []) {
     if(!in_array($type, ['h1','h2','h3','h4','h5','h6'])) {
