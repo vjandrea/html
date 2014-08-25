@@ -6,6 +6,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testFavicon() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals(
@@ -20,6 +21,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testMetaCharset() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<meta charset="utf-8">', $html->meta_charset());
@@ -30,6 +32,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testHtml() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<html>', $html->html());
@@ -42,6 +45,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testTitle() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<title></title>', $html->title());
@@ -52,6 +56,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testH1() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<h1></h1>', $html->h1());
@@ -64,6 +69,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testH2() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<h2></h2>', $html->h2());
@@ -76,6 +82,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testH3() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<h3></h3>', $html->h3());
@@ -88,6 +95,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testH4() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<h4></h4>', $html->h4());
@@ -100,6 +108,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testH5() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<h5></h5>', $html->h5());
@@ -112,6 +121,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testH6() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('<h6></h6>', $html->h6());
@@ -124,6 +134,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
 
   public function testHeading() {
+
     $html = new HtmlBuilder;
 
     $this->assertEquals('', $html->heading('h8'));
@@ -131,7 +142,5 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals('<h1 class="title">test</h1>', $html->heading('h1', 'test', ['class' => 'title']));
 
   }
-
-
 
 }
