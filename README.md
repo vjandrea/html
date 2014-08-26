@@ -33,186 +33,165 @@ Run `composer install` and you're ready to use the package.
 
 Usage
 -----
-
-### favicon()
+### favicon
 
 Returns a favicon link to the specified image href
 
-	favicon(string $href, string $type) : string
-	
+    favicon(string $href = '', string $type = 'image/x-icon')
+
 **Parameters**
 
-	string	$href	default ''
-	string	$type	default 'image/x-icon'
+    string	$href	default ''
+    string	$type	default 'image/x-icon'
 
 **Returns**
 
-	string
+    string
 
-
-
-### meta_charset()
+### meta_charset
 
 Returns a meta charset tag
 
-	meta_charset(string $charset) : string
+    meta_charset(string $charset = 'utf-8')
 
 **Parameters**
 
-	string	$charset	default 'utf-8'
+    string	$charset	default 'utf-8'
 
 **Returns**
 
-	string
+    string
 
+### html
 
+Returns an html with lang parameter
 
-### html()
-
-Returns an html tag with lang parameter
-	
-	html(string $lang) : string
+    html(string $lang = '')
 
 **Parameters**
 
-	string	$lang	default ''
+    string	$lang	default ''
 
 **Returns**
 
-	string
+    string
 
-
-
-### title()
+### title
 
 Returns a title tag
 
-	title(string $title) : string
+    title(string $title = '')
 
 **Parameters**
 
-	string	$title	default ''
+    string	$title	default ''
 
 **Returns**
 
-	string
+    string
 
-
-
-### h1()
+### h1
 
 Returns a h1 heading
 
-	h1(string $title, array $attributes) : string
+    h1(string $title = '', array $attributes = array())
 
 **Parameters**
 
-	string	$title	default ''
-	array	$attributes	  default []
+    string	$title	default ''
+    array	$attributes	default []
 
 **Returns**
 
-	string
+    string
 
-
-
-### h2()
+### h2
 
 Returns a h2 heading
 
-	h2(string $title, array $attributes) : string
+    h2(string $title = '', array $attributes = array())
 
 **Parameters**
 
-	string	$title	default ''
-	array	$attributes	  default []
+    string	$title	default ''
+    array	$attributes	default []
 
 **Returns**
 
-	string
+    string
 
-
-
-### h3()
+### h3
 
 Returns a h3 heading
 
-	h3(string $title, array $attributes) : string
+    h3(string $title = '', array $attributes = array())
 
 **Parameters**
 
-	string	$title	default ''
-	array	$attributes	  default []
+    string	$title	default ''
+    array	$attributes	default []
 
 **Returns**
 
-	string
+    string
 
-
-	
-### h4()
+### h4
 
 Returns a h4 heading
 
-	h4(string $title, array $attributes) : string
+    h4(string $title = '', array $attributes = array())
 
 **Parameters**
 
-	string	$title	default ''
-	array	$attributes	  default []
+    string	$title	default ''
+    array	$attributes	default []
 
 **Returns**
 
-	string
+    string
 
-
-
-### h5()
+### h5
 
 Returns a h5 heading
 
-	h5(string $title, array $attributes) : string
+    h5(string $title = '', array $attributes = array())
 
 **Parameters**
 
-	string	$title	default ''
-	array	$attributes	  default []
+    string	$title	default ''
+    array	$attributes	default []
 
 **Returns**
 
-	string
+    string
 
-
-
-### h6()
+### h6
 
 Returns a h6 heading
 
-	h6(string $title, array $attributes) : string
+    h6(string $title = '', array $attributes = array())
 
 **Parameters**
 
-	string	$title	default ''
-	array	$attributes	  default []
+    string	$title	default ''
+    array	$attributes	default []
 
 **Returns**
 
-	string
+    string
 
-
-
-### heading()
+### heading
 
 Returns a heading
 
-	heading(string $type, string $title, array $attributes) : string
+    heading(string $type = 'h1', string $title = '', array $attributes = array())
 
 **Parameters**
 
-	string	$type	default 'h1'
-	string	$title	default ''
-	array	$attributes	 default []
+    string	$type	default 'h1'
+    string	$title	default ''
+    array	$attributes	default []
 
 **Returns**
 
-	string
+    string
