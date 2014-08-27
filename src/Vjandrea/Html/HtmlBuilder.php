@@ -132,5 +132,114 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
     return '<'.$type.$this->attributes($attributes).'>'.e($title).'</'.$type.'>'; 
   }
 
+  /**
+   * Returns an <iframe> tag
+   *
+   * @param string $src default ''
+   * @param array $attributes default []
+   * @return string
+   **/
+  public function iframe($src = '', $attributes = [])
+  {
+    return '<iframe src="'.$src.'"'.$this->attributes($attributes).'></iframe>';
+  }
 
+  /**
+   * Returns a YouTube <iframe> tag
+   * By default it sets frameborder=0 and allowfullscreen
+   *
+   * @param string $youtube_id default ''
+   * @param array $attributes default []
+   * @param bool $allow_fullscreen default true
+   * @param bool $frameborder default false (deprecated in HTML5)
+   * @return string
+   **/
+  public function youtube_iframe($youtube_id = '', $attributes = [], $allow_fullscreen = true, $frameborder = false)
+  {
+    $allowfullscreen = $allow_fullscreen ? ['allowfullscreen'] : [];
+
+    return $this->iframe('//www.youtube.com/embed/'.$youtube_id, array_merge($attributes, ['frameborder' => (int) $frameborder], $allowfullscreen));
+  }
+
+  /**
+   * Returns a Vimeo <iframe> tag
+   *
+   * @param string $vimeo_id default ''
+   * @param array $attributes default ''
+   * @param bool $allowfullscreen default true
+   * @param bool $frameborder default false (deprecated in HTML5)
+   * @param bool $title default false (Vimeo option)
+   * @param bool $byline default false (Vimeo option)
+   * @param bool $portrait default false (Vimeo option)
+   * @return string
+   **/
+  public function vimeo_iframe($vimeo_id = '', $attributes = [], $allow_fullscreen = true, $frameborder = false, $title = false, $byline = false, $portrait = false)
+  {
+    $allowfullscreen = $allow_fullscreen ? ['allowfullscreen', 'webkitallowfullscreen', 'mozallowfullscreen'] : [];
+
+    return $this->iframe('//player.vimeo.com/video/'.$vimeo_id.'?title='.(int) $title.'&amp;byline='.(int) $byline.'&amp;portrait='.(int) $portrait,
+     array_merge($attributes, ['frameborder' => (int) $frameborder], $allowfullscreen));
+  }
+
+  /**
+   * Returns a <video> tag
+   *
+   * @param mixed $src default ''
+   * @return string
+   * @todo refactor with a generic media method
+   **/
+  public function video($src = '', $attributes = [])
+  {
+      $html = '';
+      $sources = '';
+
+      if(is_string($src)) {
+        $attributes['src'] = $src;
+      } elseif(is_array($src)) {
+        while(list($k, $source) = each($src)) {
+          $sources .= $this->source($source);
+        }
+      } 
+      $html = '<video'.$this->attributes($attributes).'>'.$sources;
+      $html .= 'Your browser does not support the video element.</video>';
+
+      return $html;
+   }
+
+  /**
+   * Returns an <audio> tag
+   *
+   * @param mixed $src default '' (it may be an array)
+   * @param array $attributes default []
+   * @return string
+   * @todo refactor with a generic media method
+   **/
+  public function audio($src = '', $attributes = [])
+  {
+      $html = '';
+      $sources = '';
+
+      if(is_string($src)) {
+        $attributes['src'] = $src;
+      } elseif(is_array($src)) {
+        while(list($k, $source) = each($src)) {
+          $sources .= $this->source($source);
+        }
+      } 
+      $html = '<audio'.$this->attributes($attributes).'>'.$sources;
+      $html .= 'Your browser does not support the audio element.</audio>';
+
+      return $html;
+  }
+
+  /**
+   * undocumented function
+   *
+   * @return void
+   * @author 
+   **/
+  public function source($src = '')
+  {
+    return '<source src="'.$src.'" />';
+  }
 }

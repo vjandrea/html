@@ -142,5 +142,91 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals('<h1 class="title">test</h1>', $html->heading('h1', 'test', ['class' => 'title']));
 
   }
+  
+  
+  public function testIframe() {
+  
+    $html = new HtmlBuilder;
+
+    $this->assertEquals('<iframe src="test.php"></iframe>', $html->iframe('test.php'));
+
+    $this->assertEquals(
+      '<iframe src="anothertest.php" width="640" height="320"></iframe>', 
+      $html->iframe('anothertest.php', ['width' => 640, 'height' => 320])
+    );
+
+    $this->assertEquals(
+      '<iframe src="paltest.php" width="720" height="576" allowfullscreen="allowfullscreen"></iframe>', 
+      $html->iframe('paltest.php', ['width' => 720, 'height' => 576, 'allowfullscreen'])
+    );
+
+  }
+  
+  
+  public function testYoutubeIframe() {
+
+    $html = new HtmlBuilder;
+    
+    $this->assertEquals(
+      '<iframe src="//www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
+      $html->youtube_iframe('dQw4w9WgXcQ', ['width' => 420, 'height' => 315])
+    );
+
+    $this->assertEquals(
+      '<iframe src="//www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
+      $html->youtube_iframe('dQw4w9WgXcQ', ['width' => 420, 'height' => 315], true, false)
+    );
+
+    $this->assertEquals(
+      '<iframe src="//www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="1"></iframe>',
+      $html->youtube_iframe('dQw4w9WgXcQ', ['width' => 420, 'height' => 315], false, true)
+    );
+
+  }
+  
+  
+  public function testVimeoIframe() {
+
+    $html = new HtmlBuilder;
+
+    $this->assertEquals(
+      '<iframe src="//player.vimeo.com/video/45196609?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe>',
+      $html->vimeo_iframe('45196609', ['width' => 500, 'height' => 281])
+    );
+
+  }
+  
+  
+  public function testVideo() {
+
+    $html = new HtmlBuilder;
+    
+    $this->assertEquals(
+      '<video autoplay="autoplay" controls="controls"><source src="movie.mp4" /><source src="movie.ogg" />Your browser does not support the video element.</video>',
+      $html->video(['movie.mp4','movie.ogg'], ['autoplay', 'controls'])
+    );
+
+    $this->assertEquals(
+      '<video controls="controls" src="video.mp4">Your browser does not support the video element.</video>', 
+      $html->video('video.mp4', ['controls'])
+    );
+  }
+  
+  
+  public function testAudio() {
+    
+    $html = new HtmlBuilder;
+
+    $this->assertEquals(
+      '<audio autoplay="autoplay" controls="controls"><source src="example.ogg" /><source src="example.mp3" />Your browser does not support the audio element.</audio>',
+      $html->audio(['example.ogg','example.mp3'], ['autoplay', 'controls'])
+    );
+
+    $this->assertEquals(
+      '<audio controls="controls" src="test.ogg">Your browser does not support the audio element.</audio>', 
+      $html->audio('test.ogg', ['controls'])
+    );
+
+  }
 
 }
