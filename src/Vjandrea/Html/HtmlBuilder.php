@@ -195,11 +195,36 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   /**
    * Returns an <audio> tag
    *
-   * @param mixed $src default ''
+   * @param mixed $src default '' (it may be an array)
+   * @param array $attributes default []
    * @return string
    **/
-  public function audio($src = '')
+  public function audio($src = '', $attributes = [])
   {
-    return '<audio></audio>';
+      $html = '';
+      $sources = '';
+      
+      if(is_string($src)) {
+        $attributes['src'] = $src;
+      } elseif(is_array($src)) {
+        while(list($k, $source) = each($src)) {
+          $sources .= $this->source($source);
+        }
+      }
+      $html = '<audio'.$this->attributes($attributes).'>'.$sources;
+      $html .= 'Your browser does not support the audio element.</audio>';
+
+      return $html;
+  }
+
+  /**
+   * undocumented function
+   *
+   * @return void
+   * @author 
+   **/
+  public function source($src = '')
+  {
+    return '<source src="'.$src.'" />';
   }
 }

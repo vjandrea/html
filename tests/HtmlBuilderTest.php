@@ -181,6 +181,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
       '<iframe src="//www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="1"></iframe>',
       $html->youtube_iframe('dQw4w9WgXcQ', ['width' => 420, 'height' => 315], false, true)
     );
+
   }
   
   
@@ -191,7 +192,7 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       '<iframe src="//player.vimeo.com/video/45196609?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe>',
       $html->vimeo_iframe('45196609', ['width' => 500, 'height' => 281])
-      );
+    );
 
   }
   
@@ -206,6 +207,16 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
   public function testAudio() {
     
     $html = new HtmlBuilder;
+
+    $this->assertEquals(
+      '<audio autoplay="autoplay" controls="controls"><source src="example.ogg" /><source src="example.mp3" />Your browser does not support the audio element.</audio>',
+      $html->audio(['example.ogg','example.mp3'], ['autoplay', 'controls'])
+    );
+
+    $this->assertEquals(
+      '<audio controls="controls" src="test.ogg">Your browser does not support the audio element.</audio>', 
+      $html->audio('test.ogg', ['controls'])
+    );
 
   }
 
