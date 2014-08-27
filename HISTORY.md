@@ -3,7 +3,7 @@ Release notes
 
 1.0.0
 -----
-First public release, provides:
+First public release with the following methods:
 
 * favicon()
 * meta_charset()
