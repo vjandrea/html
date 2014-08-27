@@ -132,5 +132,53 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
     return '<'.$type.$this->attributes($attributes).'>'.e($title).'</'.$type.'>'; 
   }
 
+  /**
+   * undocumented function
+   *
+   * @return void
+   * @author 
+   **/
+  public function iframe()
+  {
+  }
 
+  /**
+   * undocumented function
+   *
+   * @return void
+   * @author 
+   **/
+  public function youtube_iframe()
+  {
+  }
+
+  /**
+   * undocumented function
+   *
+   * @return void
+   * @author 
+   **/
+  public function vimeo_iframe()
+  {
+  }
+
+  /**
+   * undocumented function
+   *
+   * @return void
+   * @author 
+   **/
+  public function video()
+  {
+  }
+
+  /**
+   * undocumented function
+   *
+   * @return void
+   * @author 
+   **/
+  public function audio()
+  {
+  }
 }

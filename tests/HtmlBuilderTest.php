@@ -142,5 +142,30 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals('<h1 class="title">test</h1>', $html->heading('h1', 'test', ['class' => 'title']));
 
   }
+  
+  
+  public function testIframe() {
+  
+  }
+  
+  
+  public function testYoutubeIframe() {
+    
+  }
+  
+  
+  public function testVimeoIframe() {
+    
+  }
+  
+  
+  public function testVideo() {
+    
+  }
+  
+  
+  public function testAudio() {
+    
+  }
 
 }
