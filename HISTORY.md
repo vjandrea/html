@@ -24,9 +24,8 @@ New methods added:
 * iframe()
 * youtube_iframe()
 * vimeo_iframe()
-* video
-* audio
-* source (private)
+* video()
+* audio()
 
 TODO
 ----
