@@ -186,11 +186,25 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
    *
    * @param mixed $src default ''
    * @return string
+   * @todo refactor with a generic media method
    **/
-  public function video($src = '')
+  public function video($src = '', $attributes = [])
   {
-    return '<video></video>';
-  }
+      $html = '';
+      $sources = '';
+
+      if(is_string($src)) {
+        $attributes['src'] = $src;
+      } elseif(is_array($src)) {
+        while(list($k, $source) = each($src)) {
+          $sources .= $this->source($source);
+        }
+      } 
+      $html = '<video'.$this->attributes($attributes).'>'.$sources;
+      $html .= 'Your browser does not support the video element.</video>';
+
+      return $html;
+   }
 
   /**
    * Returns an <audio> tag
@@ -198,19 +212,20 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
    * @param mixed $src default '' (it may be an array)
    * @param array $attributes default []
    * @return string
+   * @todo refactor with a generic media method
    **/
   public function audio($src = '', $attributes = [])
   {
       $html = '';
       $sources = '';
-      
+
       if(is_string($src)) {
         $attributes['src'] = $src;
       } elseif(is_array($src)) {
         while(list($k, $source) = each($src)) {
           $sources .= $this->source($source);
         }
-      }
+      } 
       $html = '<audio'.$this->attributes($attributes).'>'.$sources;
       $html .= 'Your browser does not support the audio element.</audio>';
 

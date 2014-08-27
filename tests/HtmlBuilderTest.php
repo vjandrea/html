@@ -201,6 +201,15 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
     $html = new HtmlBuilder;
     
+    $this->assertEquals(
+      '<video autoplay="autoplay" controls="controls"><source src="movie.mp4" /><source src="movie.ogg" />Your browser does not support the video element.</video>',
+      $html->video(['movie.mp4','movie.ogg'], ['autoplay', 'controls'])
+    );
+
+    $this->assertEquals(
+      '<video controls="controls" src="video.mp4">Your browser does not support the video element.</video>', 
+      $html->video('video.mp4', ['controls'])
+    );
   }
   
   
