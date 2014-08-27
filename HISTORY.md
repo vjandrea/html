@@ -1,0 +1,29 @@
+Release notes
+=============
+
+1.0.0
+-----
+First public release, provides:
+
+* favicon()
+* meta_charset()
+* html()
+* title()
+* h1()
+* h2()
+* h3()
+* h4()
+* h5()
+* h6()
+* heading()
+
+1.1.0
+-----
+New methods added:
+
+* iframe()
+* youtube_iframe()
+* vimeo_iframe()
+* video
+* audio
+

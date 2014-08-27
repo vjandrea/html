@@ -146,26 +146,36 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
   
   public function testIframe() {
   
+    $html = new HtmlBuilder;
+
   }
   
   
   public function testYoutubeIframe() {
+
+    $html = new HtmlBuilder;
     
   }
   
   
   public function testVimeoIframe() {
-    
+
+    $html = new HtmlBuilder;
+
   }
   
   
   public function testVideo() {
+
+    $html = new HtmlBuilder;
     
   }
   
   
   public function testAudio() {
     
+    $html = new HtmlBuilder;
+
   }
 
 }

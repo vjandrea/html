@@ -133,50 +133,52 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   }
 
   /**
-   * undocumented function
+   * Returns an <iframe> tag
    *
-   * @return void
-   * @author 
+   * @param string $src default ''
+   * @param array $attributes default []
+   * @return string
    **/
   public function iframe()
   {
   }
 
   /**
-   * undocumented function
+   * Returns a YouTube <iframe> tag
    *
-   * @return void
-   * @author 
+   * @param string $youtube_id default ''
+   * @param array $attributes default []
+   * @return string
    **/
   public function youtube_iframe()
   {
   }
 
   /**
-   * undocumented function
+   * Returns a Vimeo <iframe> tag
    *
-   * @return void
-   * @author 
+   * @param string $vimeo_id default ''
+   * @return string
    **/
   public function vimeo_iframe()
   {
   }
 
   /**
-   * undocumented function
+   * Returns a <video> tag
    *
-   * @return void
-   * @author 
+   * @param mixed $src default null
+   * @return string
    **/
   public function video()
   {
   }
 
   /**
-   * undocumented function
+   * Returns an <audio> tag
    *
-   * @return void
-   * @author 
+   * @param mixed $src default null
+   * @return string
    **/
   public function audio()
   {
