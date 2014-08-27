@@ -189,8 +189,8 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
     $html = new HtmlBuilder;
 
     $this->assertEquals(
-      '<iframe src="//player.vimeo.com/video/52404779?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe>',
-      $html->vimeo_iframe('52404779', ['width' => 500, 'height' => 281])
+      '<iframe src="//player.vimeo.com/video/45196609?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe>',
+      $html->vimeo_iframe('45196609', ['width' => 500, 'height' => 281])
       );
 
   }
