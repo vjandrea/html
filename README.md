@@ -28,26 +28,27 @@ Installation
 ------------
 Add to `composer.json`:
 
-	"vjandrea/html": "dev-master"
+    "vjandrea/html": "dev-master"
 
 and add to the `'providers'` array in `app/config/app.php`
 
-	'Vjandrea\Html\HtmlServiceProvider'	
+    'Vjandrea\Html\HtmlServiceProvider' 
 
 Run `composer install` and you're ready to use the package.
 
 Usage
 -----
+
 ### favicon
 
 Returns a favicon link to the specified image href
 
-    favicon(string $href = '', string $type = 'image/x-icon')
+    HTML::favicon($href, $type)
 
 **Parameters**
 
-    string	$href	default ''
-    string	$type	default 'image/x-icon'
+    string  $href   default ''
+    string  $type   default 'image/x-icon'
 
 **Returns**
 
@@ -57,11 +58,11 @@ Returns a favicon link to the specified image href
 
 Returns a meta charset tag
 
-    meta_charset(string $charset = 'utf-8')
+    HTML::meta_charset($charset)
 
 **Parameters**
 
-    string	$charset	default 'utf-8'
+    string  $charset    default 'utf-8'
 
 **Returns**
 
@@ -71,11 +72,11 @@ Returns a meta charset tag
 
 Returns an html with lang parameter
 
-    html(string $lang = '')
+    HTML::html($lang)
 
 **Parameters**
 
-    string	$lang	default ''
+    string  $lang   default ''
 
 **Returns**
 
@@ -85,11 +86,11 @@ Returns an html with lang parameter
 
 Returns a title tag
 
-    title(string $title = '')
+    HTML::title($title)
 
 **Parameters**
 
-    string	$title	default ''
+    string  $title  default ''
 
 **Returns**
 
@@ -99,12 +100,12 @@ Returns a title tag
 
 Returns a h1 heading
 
-    h1(string $title = '', array $attributes = array())
+    HTML::h1($title, $attributes)
 
 **Parameters**
 
-    string	$title	default ''
-    array	$attributes	default []
+    string  $title  default ''
+    array   $attributes default []
 
 **Returns**
 
@@ -114,12 +115,12 @@ Returns a h1 heading
 
 Returns a h2 heading
 
-    h2(string $title = '', array $attributes = array())
+    HTML::h2($title, $attributes)
 
 **Parameters**
 
-    string	$title	default ''
-    array	$attributes	default []
+    string  $title  default ''
+    array   $attributes default []
 
 **Returns**
 
@@ -129,12 +130,12 @@ Returns a h2 heading
 
 Returns a h3 heading
 
-    h3(string $title = '', array $attributes = array())
+    HTML::h3($title, $attributes)
 
 **Parameters**
 
-    string	$title	default ''
-    array	$attributes	default []
+    string  $title  default ''
+    array   $attributes default []
 
 **Returns**
 
@@ -144,12 +145,12 @@ Returns a h3 heading
 
 Returns a h4 heading
 
-    h4(string $title = '', array $attributes = array())
+    HTML::h4($title, $attributes)
 
 **Parameters**
 
-    string	$title	default ''
-    array	$attributes	default []
+    string  $title  default ''
+    array   $attributes default []
 
 **Returns**
 
@@ -159,12 +160,12 @@ Returns a h4 heading
 
 Returns a h5 heading
 
-    h5(string $title = '', array $attributes = array())
+    HTML::h5($title, $attributes)
 
 **Parameters**
 
-    string	$title	default ''
-    array	$attributes	default []
+    string  $title  default ''
+    array   $attributes default []
 
 **Returns**
 
@@ -174,12 +175,12 @@ Returns a h5 heading
 
 Returns a h6 heading
 
-    h6(string $title = '', array $attributes = array())
+    HTML::h6($title, $attributes)
 
 **Parameters**
 
-    string	$title	default ''
-    array	$attributes	default []
+    string  $title  default ''
+    array   $attributes default []
 
 **Returns**
 
@@ -189,13 +190,13 @@ Returns a h6 heading
 
 Returns a heading
 
-    heading(string $type = 'h1', string $title = '', array $attributes = array())
+    HTML::heading($type, $title, $attributes)
 
 **Parameters**
 
-    string	$type	default 'h1'
-    string	$title	default ''
-    array	$attributes	default []
+    string  $type   default 'h1'
+    string  $title  default ''
+    array   $attributes default []
 
 **Returns**
 
@@ -205,12 +206,12 @@ Returns a heading
 
 Returns an &lt;iframe&gt; tag
 
-    iframe(string $src = '', array $attributes = array())
+    HTML::iframe($src, $attributes)
 
 **Parameters**
 
-    string	$src	default ''
-    array	$attributes	default []
+    string  $src    default ''
+    array   $attributes default []
 
 **Returns**
 
@@ -221,14 +222,14 @@ Returns an &lt;iframe&gt; tag
 Returns a YouTube &lt;iframe&gt; tag
 By default it sets frameborder=0 and allowfullscreen
 
-    youtube_iframe(string $youtube_id = '', array $attributes = array(), boolean $allow_fullscreen = true, boolean $frameborder = false)
+    HTML::youtube_iframe($youtube_id, $attributes, $allow_fullscreen, $frameborder)
 
 **Parameters**
 
-    string	$youtube_id	default ''
-    array	$attributes	default []
-    boolean	$allow_fullscreen	default true
-    boolean	$frameborder	default false (deprecated in HTML5)
+    string  $youtube_id default ''
+    array   $attributes default []
+    boolean $allow_fullscreen   default true
+    boolean $frameborder    default false (deprecated in HTML5)
 
 **Returns**
 
@@ -238,17 +239,17 @@ By default it sets frameborder=0 and allowfullscreen
 
 Returns a Vimeo &lt;iframe&gt; tag
 
-    vimeo_iframe(string $vimeo_id = '', array $attributes = array(),  $allow_fullscreen = true, boolean $frameborder = false, boolean $title = false, boolean $byline = false, boolean $portrait = false)
+    HTML::vimeo_iframe($vimeo_id, $attributes, $allow_fullscreen, $frameborder, $title, $byline, $portrait)
 
 **Parameters**
 
-    string	$vimeo_id	default ''
-    array	$attributes	default ''
-    boolean	$allowfullscreen	default true
-    boolean	$frameborder	default false (deprecated in HTML5)
-    boolean	$title	default false (Vimeo option)
-    boolean	$byline	default false (Vimeo option)
-    boolean	$portrait	default false (Vimeo option)
+    string  $vimeo_id   default ''
+    array   $attributes default ''
+    boolean $allowfullscreen    default true
+    boolean $frameborder    default false (deprecated in HTML5)
+    boolean $title  default false (Vimeo option)
+    boolean $byline default false (Vimeo option)
+    boolean $portrait   default false (Vimeo option)
 
 **Returns**
 
@@ -258,11 +259,11 @@ Returns a Vimeo &lt;iframe&gt; tag
 
 Returns a &lt;video&gt; tag
 
-    video(mixed $src = '',  $attributes = array())
+    HTML::video($src, $attributes)
 
 **Parameters**
 
-    mixed	$src	default ''
+    mixed   $src    default ''
 
 **Returns**
 
@@ -272,13 +273,14 @@ Returns a &lt;video&gt; tag
 
 Returns an &lt;audio&gt; tag
 
-    audio(mixed $src = '', array $attributes = array())
+    HTML::audio($src, $attributes)
 
 **Parameters**
 
-    mixed	$src	default '' (it may be an array)
-    array	$attributes	default []
+    mixed   $src    default '' (it may be an array)
+    array   $attributes default []
 
 **Returns**
 
     string
+
