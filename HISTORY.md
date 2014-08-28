@@ -24,6 +24,17 @@ New methods added:
 * iframe()
 * youtube_iframe()
 * vimeo_iframe()
-* video
-* audio
+* video()
+* audio()
 
+1.1.1
+-----
+Minor bugfixes
+
+1.1.2
+-----
+Minor bugfixes
+
+TODO
+----
+Refactor audio() and video() to avoid code repetition

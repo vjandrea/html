@@ -233,12 +233,12 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   }
 
   /**
-   * undocumented function
+   * Returns a <source> tag to be used with <audio> and <video>
    *
-   * @return void
-   * @author 
+   * @param string $src default ''
+   * @return string
    **/
-  public function source($src = '')
+  private function source($src = '')
   {
     return '<source src="'.$src.'" />';
   }

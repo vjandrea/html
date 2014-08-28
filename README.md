@@ -18,6 +18,11 @@ Methods
 * h5()
 * h6()
 * heading()
+* iframe()
+* youtube_iframe()
+* vimeo_iframe()
+* video()
+* audio()
 
 Installation
 ------------
@@ -190,6 +195,88 @@ Returns a heading
 
     string	$type	default 'h1'
     string	$title	default ''
+    array	$attributes	default []
+
+**Returns**
+
+    string
+
+### iframe
+
+Returns an &lt;iframe&gt; tag
+
+    iframe(string $src = '', array $attributes = array())
+
+**Parameters**
+
+    string	$src	default ''
+    array	$attributes	default []
+
+**Returns**
+
+    string
+
+### youtube_iframe
+
+Returns a YouTube &lt;iframe&gt; tag
+By default it sets frameborder=0 and allowfullscreen
+
+    youtube_iframe(string $youtube_id = '', array $attributes = array(), boolean $allow_fullscreen = true, boolean $frameborder = false)
+
+**Parameters**
+
+    string	$youtube_id	default ''
+    array	$attributes	default []
+    boolean	$allow_fullscreen	default true
+    boolean	$frameborder	default false (deprecated in HTML5)
+
+**Returns**
+
+    string
+
+### vimeo_iframe
+
+Returns a Vimeo &lt;iframe&gt; tag
+
+    vimeo_iframe(string $vimeo_id = '', array $attributes = array(),  $allow_fullscreen = true, boolean $frameborder = false, boolean $title = false, boolean $byline = false, boolean $portrait = false)
+
+**Parameters**
+
+    string	$vimeo_id	default ''
+    array	$attributes	default ''
+    boolean	$allowfullscreen	default true
+    boolean	$frameborder	default false (deprecated in HTML5)
+    boolean	$title	default false (Vimeo option)
+    boolean	$byline	default false (Vimeo option)
+    boolean	$portrait	default false (Vimeo option)
+
+**Returns**
+
+    string
+
+### video
+
+Returns a &lt;video&gt; tag
+
+    video(mixed $src = '',  $attributes = array())
+
+**Parameters**
+
+    mixed	$src	default ''
+
+**Returns**
+
+    string
+
+### audio
+
+Returns an &lt;audio&gt; tag
+
+    audio(mixed $src = '', array $attributes = array())
+
+**Parameters**
+
+    mixed	$src	default '' (it may be an array)
     array	$attributes	default []
 
 **Returns**
