@@ -27,6 +27,14 @@ New methods added:
 * video()
 * audio()
 
+1.1.1
+-----
+Minor bugfixes
+
+1.1.2
+-----
+Minor bugfixes
+
 TODO
 ----
 Refactor audio() and video() to avoid code repetition
