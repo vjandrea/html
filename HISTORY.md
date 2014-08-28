@@ -35,6 +35,6 @@ Minor bugfixes
 -----
 Minor bugfixes
 
-TODO
-----
-Refactor audio() and video() to avoid code repetition
+1.2.0
+-----
+Added media() method, refactored audio() and video()
