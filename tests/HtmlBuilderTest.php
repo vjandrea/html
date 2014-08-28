@@ -229,4 +229,23 @@ class HtmlBuilderTest extends \PHPUnit_Framework_TestCase {
 
   }
 
+
+  public function testMedia() {
+
+    $html = new HtmlBuilder;
+
+    $this->assertEquals(
+      '<audio controls="controls" src="test.ogg">Your browser does not support the audio element.</audio>', 
+      $html->media('audio', 'test.ogg', ['controls'])
+    );
+
+    $this->assertEquals(
+      '<video autoplay="autoplay" controls="controls"><source src="movie.mp4" /><source src="movie.ogg" />Your browser does not support the video element.</video>',
+      $html->media('video', ['movie.mp4','movie.ogg'], ['autoplay', 'controls'])
+    );
+
+    $this->assertEquals('', $html->media('test'));
+
+  }
+
 }

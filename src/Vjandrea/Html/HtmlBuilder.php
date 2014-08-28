@@ -190,20 +190,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
    **/
   public function video($src = '', $attributes = [])
   {
-      $html = '';
-      $sources = '';
-
-      if(is_string($src)) {
-        $attributes['src'] = $src;
-      } elseif(is_array($src)) {
-        while(list($k, $source) = each($src)) {
-          $sources .= $this->source($source);
-        }
-      } 
-      $html = '<video'.$this->attributes($attributes).'>'.$sources;
-      $html .= 'Your browser does not support the video element.</video>';
-
-      return $html;
+      return $this->media('video', $src, $attributes);
    }
 
   /**
@@ -216,20 +203,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
    **/
   public function audio($src = '', $attributes = [])
   {
-      $html = '';
-      $sources = '';
-
-      if(is_string($src)) {
-        $attributes['src'] = $src;
-      } elseif(is_array($src)) {
-        while(list($k, $source) = each($src)) {
-          $sources .= $this->source($source);
-        }
-      } 
-      $html = '<audio'.$this->attributes($attributes).'>'.$sources;
-      $html .= 'Your browser does not support the audio element.</audio>';
-
-      return $html;
+       return $this->media('audio', $src, $attributes);
   }
 
   /**
@@ -241,5 +215,36 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   private function source($src = '')
   {
     return '<source src="'.$src.'" />';
+  }
+
+  /**
+   * Generates an <audio> or <video> tag
+   *
+   * @param string $type default '', may be 'video' or 'audio'
+   * @param mixed $src default '', it may be an array of sources
+   * @param array $attributes default []
+   * @return string
+   * @author 
+   **/
+  public function media($type = '', $src = '', $attributes = [])
+  {
+      if(!in_array($type, ['audio', 'video'])) {
+        return '';
+      }
+
+      $html = '';
+      $sources = '';
+
+      if(is_string($src)) {
+        $attributes['src'] = $src;
+      } elseif(is_array($src)) {
+        while(list($k, $source) = each($src)) {
+          $sources .= $this->source($source);
+        }
+      } 
+      $html = '<'.$type.$this->attributes($attributes).'>'.$sources;
+      $html .= 'Your browser does not support the '.$type.' element.</'.$type.'>';
+
+      return $html;    
   }
 }
