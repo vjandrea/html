@@ -184,9 +184,8 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
   /**
    * Returns a <video> tag
    *
-   * @param mixed $src default ''
+   * @param mixed $src default '', it may be an array
    * @return string
-   * @todo refactor with a generic media method
    **/
   public function video($src = '', $attributes = [])
   {
@@ -199,7 +198,6 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
    * @param mixed $src default '' (it may be an array)
    * @param array $attributes default []
    * @return string
-   * @todo refactor with a generic media method
    **/
   public function audio($src = '', $attributes = [])
   {
@@ -224,7 +222,6 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder
    * @param mixed $src default '', it may be an array of sources
    * @param array $attributes default []
    * @return string
-   * @author 
    **/
   public function media($type = '', $src = '', $attributes = [])
   {
